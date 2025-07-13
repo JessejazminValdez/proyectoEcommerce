@@ -1,0 +1,145 @@
+header {
+  .header__logo {
+    @include flexbox(flex, row, space-between, 0);
+    align-items: center;
+
+    img {
+      height: 5rem;
+    }
+
+    label {
+      @include textFormat($colorLightBlue, 500, 1rem);
+
+      span {
+        @include textFormat($colorDarkBlue, $textBold, 1rem);
+      }
+    }
+
+    .header__phones {
+      @include flexbox(flex, row, normal, 3rem);
+    }
+  }
+}
+
+.main__banner {
+  @include container($colorDarkBlue, 100%, 100%, 4rem 0, 0);
+  text-align: center;
+  background-image: url(../img/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $colorTextWhite;
+  background-position-y: 60%;
+}
+
+.article__form-registration {
+  margin: 2rem 0;
+  width: 60%;
+
+  legend {
+    @include textFormat($colorDarkBlue, $textBold, 1rem);
+  }
+
+  fieldset {
+    @include flexbox(grid, normal, normal, 1rem);
+    @include container(#f0f8ff, 100%, 100%, 2rem, 0 2rem);
+    border: none;
+    grid-template-columns: repeat(3, 1fr);
+
+    div {
+      @include flexbox(flex, column, normal, 0);
+    }
+
+    div label {
+      font-weight: 100;
+    }
+
+    div input, select {
+      margin-top: 0.5rem;
+      border: unset;
+      border-bottom: 1px solid #121212;
+      height: 2rem;
+    }
+  }
+
+  .container-button {
+    padding: 2rem 0;
+    margin: 0 2rem;
+    text-align: right;
+  }
+  
+  .button {
+    @include container($colorDarkBlue, 8rem, 100%, 0.5rem, 0);
+    @include textFormat(#f1efec, $textBold, 1rem);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.3rem;
+  }
+}
+
+.article__status-panel {
+  padding: 1rem 2rem;
+  width: 40%;
+  margin: 1rem;
+  border-radius: 1rem $colorTextBlack;
+  text-align: end;
+
+  h3 {
+    color: $colorDarkBlue;
+  }
+
+  p {
+    font-weight: $textBold;
+  }
+
+  p span {
+    font-weight: 200;
+  }
+
+  .section__guides {
+    @include container($colorDarkBlue, 40%, 100%, 1rem, 0);
+    justify-self: end;
+    border: .1rem solid $colorDarkBlue;
+    color: #f1efec;
+  }
+}
+
+.article__guidelines-list {
+  padding: 2rem 2rem 3rem 2rem;
+
+  h3 {
+    color: $colorDarkBlue;
+  }
+
+  table {
+    thead {
+      color: $colorTextWhite;
+    }
+
+    thead th {
+      @include textFormat($colorTextBlack, 100, 1rem, 0.8rem 3rem);
+      color: $colorTextWhite;
+      letter-spacing: 0.1rem;
+    }
+
+    tbody {
+      td {
+        @include textFormat($colorTextBlack, 100, medium, 0.5rem 1rem);
+        color: #121212;
+
+        .table__button-update {
+          @include flexbox(flex, row, normal, 0.8rem);
+          @include container($colorLightBlue, 100%, 100%, 0.3rem, 0);
+          @include textFormat($colorTextWhite, $textBold, small);
+          border-radius: 0.5rem;
+          align-items: center;
+          cursor: pointer;
+
+          .button__icon-update {
+            height: 2rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+$mainFontFamily: "Monserrat",'Open Sans', sans-serif;
+$textBold: 700;
+$colorDarkBlue: #091E3F;
+$colorLightBlue: #6AC6DE;
+$colorTextWhite: #fff;
+$colorTextBlack: #0000;
+
+@mixin flexbox($display, $direction, $justify, $gap) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  gap: $gap;
+  box-sizing: border-box;
+}
+
+@mixin container($background, $width, $height, $padding, $margin) {
+  background-color: $background;
+  width: $width;
+  height: $height;
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin textFormat($color, $fontWeight, $fontSize, $padding: 0, $margin: 0) {
+  color: $color;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  padding: $padding;
+  margin: $margin;
+}

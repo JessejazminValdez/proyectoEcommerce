@@ -1,0 +1,73 @@
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  margin: 1rem 0rem 0 0rem;
+  padding: 0;
+}
+
+header {
+  nav {
+    @include flexbox(flex, row, normal, 2rem);
+    @include container($colorDarkBlue, 100%, 4rem, 0, 1rem 0);
+    align-items: center;
+
+    ul {
+      @include flexbox(flex, row, normal, 2.5rem);
+      list-style-type: none;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      @include textFormat($colorTextWhite, 600, 1rem);
+      text-decoration: none;
+
+      &:hover {
+        color: $colorLightBlue;
+      /*border-bottom: #fff 1.rem;*/
+      }
+    }
+  }
+}
+
+article {
+  display: flex;
+}
+
+footer {
+  @include textFormat($colorTextWhite, 200, 1rem, 0);
+  background-color: $colorDarkBlue;
+
+  .footer__info {
+    @include flexbox(flex, column, normal, 0);
+    @include textFormat($colorTextWhite, 100, 1rem, 3rem);
+    width: 40%;
+    justify-self: center;
+    letter-spacing: 0.05rem;
+    text-align: center;
+
+    .footer__logo {
+      width: 15rem;
+      box-sizing: border-box;
+    }
+  }
+
+  .footer__social-media {
+    @include flexbox(flex, row, center, 3rem);
+
+    .footer__icon-media {
+      height: 2rem;
+    }
+  }
+
+  .footer__copyright {
+    @include flexbox(flex, row, space-between, 0);
+    @include textFormat($colorTextWhite, $textBold, small);
+    @include container($colorLightBlue, 100%, 100%, 0 2rem, 0);
+  }
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Hound Express</title>
+</head>
+<body>
+  <header>
+    <!-- logo, phones,  languages -->
+    <div class="logo">
+
+      <!-- logo -->
+      <div>
+        <img src="./img/logo.png" alt="logo">
+      </div>
+
+      <!-- phones -->
+      <div class="phones">
+        <label>
+          <span>MX</span>
+          +52(55) 4000 1920
+        </label>
+        <label>
+          <span>US</span>
+          +1(95) 6568 3443
+        </label>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav>
+      <ul>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Registro de Guías</a></li>
+        <li><a href="">Estado general</a></li>
+        <li><a href="">Lista de Guías</a></li>
+        <li><a href="">Buscar Guías</a></li>
+        <li><a href="">Historial de Guías</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+
+    <!-- main banner -->
+    <section class="banner">  
+      <h2>Rastrea rápido, rastrea fácil</h2>
+      <p>Comienza ya!</p>
+    </section>
+
+    <article>
+      <!-- guide registration form -->
+      <section class="form-registration">
+
+        <form>
+
+          <fieldset>
+            <legend>Información de la guía</legend>
+            <!-- guide number -->
+            <div>
+              <label for="guideNumber">Numero de Guía</label>
+              <input 
+                type="text"
+                id="guideNumber"
+                name="guideNumber"
+                placeholder="Ingresa número de guía"
+                title="Ingresa número de guía"
+                required
+              >
+            </div>
+
+            <!-- origin -->
+            <div>
+              <label for="origin">Origen</label>
+              <input 
+                type="text"
+                id="origin"
+                name="origin"
+                placeholder="Ingresa el origen"
+                title="Ingresa el origen"
+                required
+              >
+            </div>
+
+            <!-- destination -->
+            <div>
+              <label for="destination">Destino</label>
+              <input 
+                type="text"
+                id="destination"
+                name="destination"
+                placeholder="Ingresa el destino"
+                title="Ingresa el destino"
+                required
+              >
+            </div>
+
+            <!-- creation date -->
+            <div>
+              <label for="creationDate">Fecha de creación</label>
+              <input 
+                type="date"
+                id="creationDate"
+                name="creationDate"
+                placeholder="Ingresa fecha de creación"
+                title="Ingresa fecha de creación"
+                required
+              >
+            </div>
+
+            <!-- status -->
+            <div>  
+              <label for="status">Estado Inicial</label>
+              <select name="status" id="status">
+                <option value="">--Selecciona un estado</option>
+                <option value="pending">Pendiente</option>
+                <option value="process">En tránsito</option>
+                <option value="delivered">Entregado</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <div class="container-button">
+            <input class="button" type="submit" value="Enviar">
+          </div>
+        </form>
+      </section>
+
+      <!-- general status panel -->
+      <section class="status-panel">
+        <h3>Panel de estado General</h3>
+        <div class="guides">
+          <p>Total de guías activas: <span>10</span> 
+          </p>
+          <p>Guías en transito: <span>7</span>
+          </p>
+          <p>Guías entregadas: <span>3</span>
+          </p>
+        </div>
+      </section>
+    </article>
+    
+    <!-- Guidelines list -->
+    <section class="guidelines-list">
+      <h3>Lista de guías</h3>
+      <table>
+        <thead bgcolor="#091E3F">
+          <tr>
+            <th scope="col">Número de guía</th>
+            <th scope="col">Estado actual</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Destino</th>
+            <th scope="col">Fecha de última actualización</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+
+        <tbody align="center" bgcolor="#f0f8ff">
+          <tr>
+            <td>1234567890</td>
+            <td>Pendiente</td>
+            <td>Puebla</td>
+            <td>CDMX</td>
+            <td>22/02/2025</td>
+            <td>
+              <div class="button-update">
+                <img src="./img/update.png" class="icon-update" alt="Icono de actualizar">
+                <label>Actualizar</label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>1234567890</td>
+            <td>Entregado</td>
+            <td>Acapulco</td>
+            <td>Texcoco</td>
+            <td>15/01/2025</td>
+            <td>
+              <div class="button-update">
+                <img src="./img/update.png" class="icon-update" alt="Icono de actualizar">
+                <label>Actualizar</label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>1234567890</td>
+            <td>Entregado</td>
+            <td>Acapulco</td>
+            <td>Texcoco</td>
+            <td>15/01/2025</td>
+            <td>
+              <div class="button-update">
+                <img src="./img/update.png" class="icon-update" alt="Icono de actualizar">
+                <label>Actualizar</label>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>1234567890</td>
+            <td>Entregado</td>
+            <td>Acapulco</td>
+            <td>Texcoco</td>
+            <td>15/01/2025</td>
+            <td>
+              <div class="button-update">
+                <img src="./img/update.png" class="icon-update" alt="Icono de actualizar">
+                <label>Actualizar</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- company information -->
+    <section class="info">
+      <div>
+        <img src="./img/logoFooter.png" alt="logo" class="logo">
+      </div>
+      <p>
+        Somos un equipo de expertos en logística, tecnología y comercio internacional.
+        Te queremos ayudar a llevar tu empresa al siguiente nivel con soluciones de importación, 
+        exportación y logística nacional e internacional.
+      </p>
+      <div class="social-media">
+        <a href="https://www.linkedin.com/company/hound-express/">
+          <img src="./img/linkedinIcon.png" alt="Enlace a linked" class="icon-media">
+        </a>
+        <a href="https://www.facebook.com/houndexpress?mibextid=kFxxJD">
+          <img src="./img/facebookIcon.png" alt="Enlace a facebook" class="icon-media">
+        </a>
+        <a href="https://www.instagram.com/hound.express/?igsh=OGQ5ZDc2ODk2ZA%3D%3D#">
+          <img src="./img/instagramIcon.png" alt="Enlace a instagram" class="icon-media">
+        </a>
+      </div>
+    </section>
+
+    <!-- copyright -->
+     <section class="copyright">
+      <p>
+        Copyright &copy; 2025 Hound Express.
+        Todos los derechos reservados
+      </p>
+      <p>
+        Términos y condiciones
+      </p>
+      <p>
+        Política de privacidad
+      </p>
+     </section>
+  </footer>
+</body>
+</html>
