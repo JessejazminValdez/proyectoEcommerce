@@ -1,3 +1,5 @@
+@use "./base" as *;
+
 header {
   .header__logo {
     @include flexbox(flex, row, space-between, 0);
@@ -79,7 +81,8 @@ header {
   padding: 1rem 2rem;
   width: 40%;
   margin: 1rem;
-  border-radius: 1rem $colorTextBlack;
+  border-radius: 1rem;
+  border: 1px solid $colorTextBlack;
   text-align: end;
 
   h3 {
@@ -141,4 +144,55 @@ header {
       }
     }
   }
+}
+
+.modal {
+  display: none; // oculto por defecto
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); // overlay oscuro
+  z-index: 1000; // encima de todo
+
+  &__content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  &__close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: $colorDarkBlue;
+  }
+
+  &__actions {
+    text-align: right;
+    margin-top: 1rem;
+
+    button {
+      background-color: $colorDarkBlue;
+      color: $colorTextWhite;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $colorLightBlue;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
