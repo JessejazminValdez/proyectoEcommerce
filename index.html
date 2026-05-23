@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./scss/main.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/script.js" defer></script>
   <title>Hound Express</title>
 </head>
 <body>
@@ -60,10 +61,21 @@
       <!-- guide registration form -->
       <section class="article__form-registration">
 
-        <form>
+        <form id="guideForm">
 
           <fieldset>
             <legend>Información de la guía</legend>
+
+            <div>
+              <label for="recipient">Destinatario</label>
+              <input 
+                type="text"
+                placeholder="Ingresa nombre del destinatario" 
+                id="recipient" 
+                name="recipient" 
+                required>
+            </div>
+
             <!-- guide number -->
             <div>
               <label for="guideNumber">Numero de Guía</label>
@@ -144,6 +156,7 @@
           </p>
           <p>Guías entregadas: <span>3</span>
           </p>
+          <p>Guías registradas: <span id="registeredGuides">0</span></p>
         </div>
       </section>
     </article>
@@ -163,7 +176,7 @@
           </tr>
         </thead>
 
-        <tbody align="center" bgcolor="#f0f8ff">
+        <tbody id="guidesContainer" align="center" bgcolor="#f0f8ff">
           <tr>
             <td>1234567890</td>
             <td>Pendiente</td>
@@ -263,5 +276,24 @@
       </p>
      </section>
   </footer>
+
+    <!-- Modal oculto -->
+  <div id="updateModal" class="modal">
+    <div class="modal__content">
+      <span class="modal__close">&times;</span>
+      <h3>Actualizar estado de la guía</h3>
+      <p id="modalGuideInfo"></p>
+      <label for="newStatus">Nuevo estado:</label>
+      <select id="newStatus">
+        <option value="Pendiente">Pendiente</option>
+        <option value="En tránsito">En tránsito</option>
+        <option value="Entregado">Entregado</option>
+      </select>
+      <div class="modal__actions">
+        <button id="saveStatus">Guardar</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

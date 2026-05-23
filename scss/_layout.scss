@@ -1,6 +1,7 @@
+@use "./base" as *;
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mainFontFamily;
 }
 
 html {
@@ -29,7 +30,7 @@ header {
 
       &:hover {
         color: $colorLightBlue;
-      /*border-bottom: #fff 1.rem;*/
+        /* border-bottom: #fff 1rem; */
       }
     }
   }

@@ -88,7 +88,6 @@ header .header__logo .header__phones {
 }
 .article__form-registration .container-button {
   padding: 2rem 0;
-  margin: 0 2rem;
   text-align: right;
 }
 .article__form-registration .button {
@@ -111,7 +110,8 @@ header .header__logo .header__phones {
   padding: 1rem 2rem;
   width: 40%;
   margin: 1rem;
-  border-radius: 1rem rgba(0, 0, 0, 0);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0);
   text-align: end;
 }
 .article__status-panel h3 {
@@ -185,8 +185,59 @@ header .header__logo .header__phones {
   cursor: pointer;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.modal__content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 30%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal__close {
+  float: right;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #091E3F;
+}
+.modal__actions {
+  text-align: right;
+  margin-top: 1rem;
+}
+.modal__actions button {
+  background-color: #091E3F;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.modal__actions button:hover {
+  background-color: #6AC6DE;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Monserrat", "Open Sans", sans-serif;
 }
 
 html {
@@ -228,7 +279,7 @@ header nav a {
 }
 header nav a:hover {
   color: #6AC6DE;
-  /*border-bottom: #fff 1.rem;*/
+  /* border-bottom: #fff 1rem; */
 }
 
 article {
@@ -289,4 +340,6 @@ footer .footer__copyright {
   height: 100%;
   padding: 0 2rem;
   margin: 0;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
